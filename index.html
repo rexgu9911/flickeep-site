@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flickeep · Your photos, worth another look</title>
+<meta name="description" content="Flickeep is a quiet way to look back at your photos and keep the ones that matter. Swipe right to keep, left to let go. Your photos never leave your iPhone.">
+<style>
+:root{--ink:#0B0C0E;--paper:#F4F2EE;--quiet:rgba(244,242,238,.66)}
+body{margin:0;min-height:100vh;background:radial-gradient(70% 45% at 50% 0%,rgba(255,214,170,.12),rgba(255,214,170,0)),var(--ink);color:var(--paper);font:17px/1.55 -apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+main{flex:1;max-width:680px;margin:0 auto;padding:96px 22px 48px}
+.mark{width:44px;height:44px;border-radius:10px;overflow:hidden;position:relative;transform:rotate(-8deg);margin-bottom:28px}
+.mark .dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--paper) 32%,transparent 36%);background-size:5.5px 5.5px}
+.mark .solid{position:absolute;inset:0;background:var(--paper);clip-path:polygon(100% 8%,100% 100%,8% 100%)}
+h1{font:400 64px/1.02 "Instrument Serif","New York",Georgia,serif;margin:0;letter-spacing:-.8px}
+h1 i{color:var(--quiet)}
+p{color:rgba(244,242,238,.86);max-width:30em}
+.soon{font:500 12px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet);margin-top:36px}
+footer{max-width:680px;margin:0 auto;padding:24px 22px 48px;display:flex;gap:22px;font-size:14px}
+a{color:var(--paper)}
+footer a{color:var(--quiet);text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+<div class="mark" aria-hidden="true"><div class="dots"></div><div class="solid"></div></div>
+<h1>Your photos,<br><i>worth another look.</i></h1>
+<p>Flickeep is a quiet way to look back at your photos and keep the ones that matter. One at a time: swipe right to keep, left to let go. Nothing is deleted until you confirm. No ads, and your photos never leave your iPhone.</p>
+<p class="soon">Coming soon to the App Store</p>
+</main>
+<footer><a href="support">Support</a><a href="privacy">Privacy</a></footer>
+</body>
+</html>
