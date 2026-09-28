@@ -15,7 +15,7 @@
   const link = (root = document) => $$("[data-ct]", root).forEach(a => { a.href = storeURL(a.dataset.ct); });
   link();
 
-  /* ——— Navigation turns solid once the page moves ——— */
+  /* ——— Navigation: a little firmer once the page moves ——— */
   const nav = $(".nav");
   if (nav) {
     const solid = () => nav.classList.toggle("solid", scrollY > 8);
@@ -31,20 +31,96 @@
   }), { rootMargin: "0px 0px -8% 0px", threshold: .12 });
   $$(".rv").forEach(el => reveal.observe(el));
 
-  /* ——— How it works: the phone follows the step you're reading ——— */
+  /* ——— The headline develops once; then the mask goes ——— */
+  const title = $(".hero h1.dev");
+  if (title) {
+    if (still()) title.classList.remove("dev");
+    else title.addEventListener("animationend", () => title.classList.remove("dev"), { once: true });
+  }
+
+  /* ——— The field: prints at three depths; they lean toward the pointer and part as you scroll ——— */
+  const hero = $(".hero"), field = hero && $(".field", hero);
+  if (field) {
+    // Each print develops once its photo is here: blank paper first, then the dots grow.
+    $$(".fp .ph", field).forEach((ph, i) => {
+      const img = $("img", ph);
+      const go = () => {
+        if (still()) { ph.classList.add("done"); return; }
+        ph.style.setProperty("--delay", `${(.3 + (i * .37) % 1.2).toFixed(2)}s`);
+        ph.classList.add("developing");
+        ph.addEventListener("animationend", () => { ph.classList.add("done"); ph.classList.remove("developing"); }, { once: true });
+      };
+      img.complete && img.naturalWidth ? go() : img.addEventListener("load", go, { once: true });
+    });
+    let mx = 0, my = 0, tx = 0, ty = 0, raf = 0, near = true;
+    const frame = () => {
+      raf = 0;
+      mx += (tx - mx) * .07;
+      my += (ty - my) * .07;
+      field.style.setProperty("--mx", mx.toFixed(3));
+      field.style.setProperty("--my", my.toFixed(3));
+      field.style.setProperty("--sy", `${Math.min(scrollY, 1600).toFixed(1)}px`);
+      if (Math.abs(tx - mx) + Math.abs(ty - my) > .004) raf = requestAnimationFrame(frame);
+    };
+    const kick = () => { if (!raf && near && !still()) raf = requestAnimationFrame(frame); };
+    addEventListener("pointermove", e => {
+      if (e.pointerType !== "mouse") return;
+      tx = e.clientX / innerWidth * 2 - 1;
+      ty = e.clientY / innerHeight * 2 - 1;
+      kick();
+    }, { passive: true });
+    addEventListener("scroll", kick, { passive: true });
+    new IntersectionObserver(([e]) => { near = e.isIntersecting; }).observe(hero);
+  }
+
+  /* ——— The app, playing: short clips of the sample library, loaded when they come near ——— */
+  const load = v => { if (!v.getAttribute("src")) { v.src = v.dataset.src; v.load(); } };
+  const play = v => {
+    if (still()) return;
+    load(v);
+    const p = v.play();
+    if (p) p.catch(() => {});
+  };
+  const pause = v => { if (!v.paused) v.pause(); };
+
+  /* ——— How it works: the phone plays the step you're reading ——— */
   const story = $(".story");
   if (story) {
-    const steps = $$(".step", story), shots = $$(".story-phone img", story);
-    const show = i => {
-      steps.forEach((s, k) => s.classList.toggle("on", k === i));
-      shots.forEach((s, k) => s.classList.toggle("on", k === i));
+    const steps = $$(".step", story), clips = $$(".story-side video", story), cards = $$(".step video", story);
+    const narrow = matchMedia("(max-width: 900px)");
+    let active = 0, inView = false;
+    const sync = () => {
+      clips.forEach((v, k) => {
+        v.classList.toggle("on", k === active);
+        if (k === active && inView && !narrow.matches) play(v); else pause(v);
+      });
     };
-    const follow = new IntersectionObserver(entries => entries.forEach(e => {
+    const show = i => {
+      if (i === active && steps[i].classList.contains("on")) return;
+      steps.forEach((s, k) => s.classList.toggle("on", k === i));
+      active = i;
+      const v = clips[i];
+      if (v && v.readyState > 0) v.currentTime = 0;
+      sync();
+    };
+    const stepWatch = new IntersectionObserver(entries => entries.forEach(e => {
       if (e.isIntersecting) show(steps.indexOf(e.target));
     }), { rootMargin: "-46% 0px -46% 0px" });
-    steps.forEach(s => follow.observe(s));
+    steps.forEach(s => stepWatch.observe(s));
+    new IntersectionObserver(([e]) => {
+      inView = e.isIntersecting;
+      if (inView && !narrow.matches && clips[active]) load(clips[active]);
+      sync();
+    }, { rootMargin: "300px 0px" }).observe(story);
+    // On a phone each step has its own phone; the one in view plays.
+    const cardWatch = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!narrow.matches) return;
+      e.intersectionRatio > .6 ? play(e.target) : pause(e.target);
+    }), { threshold: [0, .6, 1] });
+    cards.forEach(v => cardWatch.observe(v));
+    narrow.addEventListener("change", () => { cards.forEach(pause); sync(); });
     show(0);
-    // On a phone the steps sit side by side; the dots say which one you're on.
+    // The dots under the steps on a phone.
     const list = $(".steps", story), pager = $(".pager", story);
     if (list && pager && steps.length > 1) {
       pager.innerHTML = steps.map(() => "<i></i>").join("");
@@ -57,6 +133,41 @@
       list.addEventListener("scroll", update, { passive: true });
       update();
     }
+  }
+
+  /* ——— A few words, lit as you read them ——— */
+  const words = $(".words p");
+  if (words) {
+    const wrap = node => {
+      for (const n of Array.from(node.childNodes)) {
+        if (n.nodeType === 1) { wrap(n); continue; }
+        if (n.nodeType !== 3) continue;
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) { frag.append(t); return; }
+          const w = document.createElement("span");
+          w.className = "w";
+          w.textContent = t;
+          frag.append(w);
+        });
+        n.replaceWith(frag);
+      }
+    };
+    wrap(words);
+    const ws = $$(".w", words);
+    let lit = -1, raf = 0;
+    const light = () => {
+      raf = 0;
+      const r = words.getBoundingClientRect(), vh = innerHeight;
+      const p = Math.max(0, Math.min(1, (vh * .8 - r.top) / (r.height + vh * .25)));
+      const n = Math.round(p * ws.length);
+      if (n === lit) return;
+      lit = n;
+      ws.forEach((w, i) => w.classList.toggle("lit", i < n));
+    };
+    addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(light); }, { passive: true });
+    light();
   }
 
   /* ——— On phones, a small bar once the first button has scrolled away ——— */
@@ -368,8 +479,13 @@
         const node = cards.get(k);
         if (!node) return;
         node.style.setProperty("--delay", `${[.2, .5, .62][n]}s`);
-        node.classList.add("developing");
-        $(".photo", node).addEventListener("animationend", () => node.classList.remove("developing"), { once: true });
+        // Develop once the photo is here, not over an empty frame.
+        const img = $(".photo img", node);
+        const go = () => {
+          node.classList.add("developing");
+          $(".photo", node).addEventListener("animationend", () => node.classList.remove("developing"), { once: true });
+        };
+        img.complete && img.naturalWidth ? go() : img.addEventListener("load", go, { once: true });
       });
     }
 
@@ -385,6 +501,7 @@
     }
     function stopHint() {
       touched = true;
+      root.classList.add("touched");
       clearTimeout(hintTimer);
       const node = cards.get(pos);
       if (node) node.classList.remove("nudge");
