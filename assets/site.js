@@ -186,14 +186,14 @@
   function Deck(root) {
     // Sample photos from the app's sample library (Unsplash License); the backs are written the way flickeep writes them.
     const PRINTS = [
-      { img: "coast", alt: "Waves on a rocky shore at dusk", day: "Jan 9, 2026", time: "5:12 PM", lines: ["Hvar, Croatia", "A Friday evening", "One of 3 photos that day"], coord: "43.173° N · 16.441° E" },
-      { img: "dogbeach", alt: "A dog running along the beach at sunset", day: "Jan 6, 2026", time: "4:48 PM", lines: ["Huntington Beach, California", "A Tuesday afternoon", "One of 2 photos that day"], coord: "33.660° N · 117.999° W" },
-      { img: "fruitmarket", alt: "Fruit piled high at a market stall", day: "Dec 22, 2025", time: "10:21 AM", lines: ["A Monday morning", "The only photo that day"] },
-      { img: "autumnpath", alt: "A path covered in autumn leaves", day: "Dec 21, 2025", time: "3:06 PM", lines: ["Zürich, Switzerland", "A Sunday afternoon", "One of 2 photos that day"], coord: "47.377° N · 8.542° E" },
-      { img: "breakfast", alt: "A croissant and a flat white on a wooden table", day: "Jan 8, 2026", time: "9:14 AM", lines: ["A Thursday morning", "One of 3 photos that day"] },
-      { img: "bicycle", alt: "A bicycle leaning against a tree in a square", day: "Jan 7, 2026", time: "1:40 PM", lines: ["Malmö, Sweden", "A Wednesday afternoon", "One of 3 photos that day"], coord: "55.605° N · 13.004° E" },
-      { img: "catwindow", alt: "A cat's paws on a windowsill", day: "Jan 7, 2026", time: "8:02 PM", lines: ["A Wednesday evening", "One of 3 photos that day"] },
-      { img: "aerialbeach", alt: "Turquoise water over rocks, seen from above", day: "Jan 8, 2026", time: "12:30 PM", lines: ["Sagres, Portugal", "A Thursday afternoon", "One of 3 photos that day"], coord: "37.008° N · 8.940° W" }
+      { img: "beach-umbrellas", alt: "Rows of striped umbrellas on a beach below a cliffside town", day: "Aug 8, 2025", time: "3:20 PM", lines: ["Atrani, Italy", "A Friday afternoon", "One of 4 photos that day"], coord: "40.635° N · 14.608° E" },
+      { img: "coffee", alt: "A latte in a dark cup on a sunlit table", day: "Jul 24, 2025", time: "2:35 PM", lines: ["A Thursday afternoon", "One of 4 photos that day"] },
+      { img: "paros-window", alt: "A white arch framing palm trees and the sea", day: "Aug 9, 2025", time: "3:20 PM", lines: ["Paros, Greece", "A Saturday afternoon", "One of 4 photos that day"], coord: "37.086° N · 25.149° E" },
+      { img: "harbour", alt: "Boats in a turquoise bay below a green hillside", day: "Aug 8, 2025", time: "2:35 PM", lines: ["Istria, Croatia", "A Friday afternoon", "One of 4 photos that day"], coord: "45.129° N · 13.902° E" },
+      { img: "lemons", alt: "Lemons and oranges with blue glasses on a white cloth", day: "Jul 24, 2025", time: "3:05 PM", lines: ["A Thursday afternoon", "One of 4 photos that day"] },
+      { img: "milos-alley", alt: "A whitewashed alley with bougainvillea and café tables", day: "Aug 9, 2025", time: "3:05 PM", lines: ["Milos, Greece", "A Saturday afternoon", "One of 4 photos that day"], coord: "37.829° N · 24.032° E" },
+      { img: "orange-house", alt: "An orange house with a curtained window in the sun", day: "Aug 6, 2025", time: "2:50 PM", lines: ["A Wednesday afternoon", "One of 4 photos that day"] },
+      { img: "terrace", alt: "A narrow lane with a lantern, leading down to the sea", day: "Aug 9, 2025", time: "2:50 PM", lines: ["Monemvasia, Greece", "A Saturday afternoon", "One of 4 photos that day"], coord: "36.688° N · 23.056° E" }
     ];
     const N = PRINTS.length;
     const TINTS = ["#ffc2dc", "#bff5cf", "#d3c2ff"];
