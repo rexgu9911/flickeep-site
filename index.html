@@ -2,32 +2,375 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flickeep · Your photos, worth another look</title>
-<meta name="description" content="Flickeep is a quiet way to look back at your photos and keep the ones that matter. Swipe right to keep, left to let go. Your photos never leave your iPhone.">
-<style>
-:root{--ink:#0B0C0E;--paper:#F4F2EE;--quiet:rgba(244,242,238,.66)}
-body{margin:0;min-height:100vh;background:radial-gradient(70% 45% at 50% 0%,rgba(255,214,170,.12),rgba(255,214,170,0)),var(--ink);color:var(--paper);font:17px/1.55 -apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
-main{flex:1;max-width:680px;margin:0 auto;padding:96px 22px 48px}
-.mark{width:44px;height:44px;border-radius:10px;overflow:hidden;position:relative;transform:rotate(-8deg);margin-bottom:28px}
-.mark .dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--paper) 32%,transparent 36%);background-size:5.5px 5.5px}
-.mark .solid{position:absolute;inset:0;background:var(--paper);clip-path:polygon(100% 8%,100% 100%,8% 100%)}
-h1{font:400 64px/1.02 "Instrument Serif","New York",Georgia,serif;margin:0;letter-spacing:-.8px}
-h1 i{color:var(--quiet)}
-p{color:rgba(244,242,238,.86);max-width:30em}
-.soon{font:500 12px/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet);margin-top:36px}
-footer{max-width:680px;margin:0 auto;padding:24px 22px 48px;display:flex;gap:22px;font-size:14px}
-a{color:var(--paper)}
-footer a{color:var(--quiet);text-decoration:none}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>flickeep — Your photos, worth another look</title>
+<meta name="description" content="flickeep for iPhone brings your camera roll back one photo at a time. Swipe right to keep, left to let go. Nothing is deleted until you say so, and your photos never leave your iPhone.">
+<link rel="canonical" href="https://flickeep.com/">
+<meta name="theme-color" content="#0B0C0E">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="flickeep">
+<meta property="og:url" content="https://flickeep.com/">
+<meta property="og:title" content="flickeep — Your photos, worth another look">
+<meta property="og:description" content="A calm way to look back at your photos and keep the ones that matter. Swipe right to keep, left to let go. Free to try on iPhone.">
+<meta property="og:image" content="https://flickeep.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Three photo prints fanned out on a dark table, next to the words: Your photos, worth another look.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/InstrumentSerif-Italic.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/img/p/coast.webp" as="image" fetchpriority="high">
+<script src="/assets/store.js"></script>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"flickeep","description":"A calm way to look back at your photos and keep the ones that matter.","operatingSystem":"iOS 18 or later","applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://flickeep.com/"}</script>
 </head>
 <body>
-<main>
-<div class="mark" aria-hidden="true"><div class="dots"></div><div class="solid"></div></div>
-<h1>Your photos,<br><i>worth another look.</i></h1>
-<p>Flickeep is a quiet way to look back at your photos and keep the ones that matter. One at a time: swipe right to keep, left to let go. Nothing is deleted until you confirm. No ads, and your photos never leave your iPhone.</p>
-<p class="soon">Coming soon to the App Store</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><clipPath id="mark-clip"><rect x="51" y="51" width="138" height="138" rx="30"/></clipPath><symbol id="mark" viewBox="38 38 164 164"><g transform="rotate(-8 120 120)" clip-path="url(#mark-clip)" fill="currentColor"><path d="M191.00 47.15L191.00 191.00L47.15 191.00Z"/><circle cx="56.5" cy="56.5" r="0.54"/><circle cx="56.5" cy="67.5" r="1.09"/><circle cx="56.5" cy="78.5" r="1.63"/><circle cx="56.5" cy="89.5" r="2.17"/><circle cx="56.5" cy="100.5" r="2.72"/><circle cx="56.5" cy="111.5" r="3.26"/><circle cx="56.5" cy="122.5" r="3.81"/><circle cx="56.5" cy="133.5" r="4.35"/><circle cx="56.5" cy="144.5" r="4.89"/><circle cx="56.5" cy="155.5" r="5.44"/><circle cx="56.5" cy="166.5" r="5.98"/><circle cx="56.5" cy="177.5" r="6.52"/><circle cx="67.5" cy="56.5" r="1.09"/><circle cx="67.5" cy="67.5" r="1.63"/><circle cx="67.5" cy="78.5" r="2.17"/><circle cx="67.5" cy="89.5" r="2.72"/><circle cx="67.5" cy="100.5" r="3.26"/><circle cx="67.5" cy="111.5" r="3.81"/><circle cx="67.5" cy="122.5" r="4.35"/><circle cx="67.5" cy="133.5" r="4.89"/><circle cx="67.5" cy="144.5" r="5.44"/><circle cx="67.5" cy="155.5" r="5.98"/><circle cx="67.5" cy="166.5" r="6.52"/><circle cx="78.5" cy="56.5" r="1.63"/><circle cx="78.5" cy="67.5" r="2.17"/><circle cx="78.5" cy="78.5" r="2.72"/><circle cx="78.5" cy="89.5" r="3.26"/><circle cx="78.5" cy="100.5" r="3.81"/><circle cx="78.5" cy="111.5" r="4.35"/><circle cx="78.5" cy="122.5" r="4.89"/><circle cx="78.5" cy="133.5" r="5.44"/><circle cx="78.5" cy="144.5" r="5.98"/><circle cx="78.5" cy="155.5" r="6.52"/><circle cx="89.5" cy="56.5" r="2.17"/><circle cx="89.5" cy="67.5" r="2.72"/><circle cx="89.5" cy="78.5" r="3.26"/><circle cx="89.5" cy="89.5" r="3.81"/><circle cx="89.5" cy="100.5" r="4.35"/><circle cx="89.5" cy="111.5" r="4.89"/><circle cx="89.5" cy="122.5" r="5.44"/><circle cx="89.5" cy="133.5" r="5.98"/><circle cx="89.5" cy="144.5" r="6.52"/><circle cx="100.5" cy="56.5" r="2.72"/><circle cx="100.5" cy="67.5" r="3.26"/><circle cx="100.5" cy="78.5" r="3.81"/><circle cx="100.5" cy="89.5" r="4.35"/><circle cx="100.5" cy="100.5" r="4.89"/><circle cx="100.5" cy="111.5" r="5.44"/><circle cx="100.5" cy="122.5" r="5.98"/><circle cx="100.5" cy="133.5" r="6.52"/><circle cx="111.5" cy="56.5" r="3.26"/><circle cx="111.5" cy="67.5" r="3.81"/><circle cx="111.5" cy="78.5" r="4.35"/><circle cx="111.5" cy="89.5" r="4.89"/><circle cx="111.5" cy="100.5" r="5.44"/><circle cx="111.5" cy="111.5" r="5.98"/><circle cx="111.5" cy="122.5" r="6.52"/><circle cx="122.5" cy="56.5" r="3.81"/><circle cx="122.5" cy="67.5" r="4.35"/><circle cx="122.5" cy="78.5" r="4.89"/><circle cx="122.5" cy="89.5" r="5.44"/><circle cx="122.5" cy="100.5" r="5.98"/><circle cx="122.5" cy="111.5" r="6.52"/><circle cx="133.5" cy="56.5" r="4.35"/><circle cx="133.5" cy="67.5" r="4.89"/><circle cx="133.5" cy="78.5" r="5.44"/><circle cx="133.5" cy="89.5" r="5.98"/><circle cx="133.5" cy="100.5" r="6.52"/><circle cx="144.5" cy="56.5" r="4.89"/><circle cx="144.5" cy="67.5" r="5.44"/><circle cx="144.5" cy="78.5" r="5.98"/><circle cx="144.5" cy="89.5" r="6.52"/><circle cx="155.5" cy="56.5" r="5.44"/><circle cx="155.5" cy="67.5" r="5.98"/><circle cx="155.5" cy="78.5" r="6.52"/><circle cx="166.5" cy="56.5" r="5.98"/><circle cx="166.5" cy="67.5" r="6.52"/><circle cx="177.5" cy="56.5" r="6.52"/></g></symbol></defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="flickeep, home"><svg aria-hidden="true"><use href="#mark"/></svg><b>flickeep</b></a>
+    <nav class="nav-links" aria-label="On this page">
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="pill when-live" data-ct="nav" href="/get">Get flickeep</a>
+    <span class="nav-soon when-soon">Coming soon</span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ————— Hero ————— -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="app-id rv"><img src="/img/icon.webp" alt="" width="52" height="52"><span><b>flickeep</b><small>for iPhone · Free to try</small></span></div>
+      <h1 id="hero-title" class="display rv">Your photos,<i>worth another look.</i></h1>
+      <p class="lede rv" style="--rv:.08s">flickeep brings your camera roll back one print at a time. Keep what matters, let the rest go. Nothing is deleted until you say so.</p>
+      <div class="cta rv" style="--rv:.16s">
+        <a class="badge when-live" data-ct="hero" href="/get"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" width="168" height="56" alt="Download on the App Store"></a>
+        <div class="qr when-live"><div class="qr-code"><svg role="img" aria-label="QR code for flickeep.com/get" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges"><path fill="currentColor" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM14 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM1 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM21 10h1v1h-1zM24 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM14 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM2 12h1v1h-1zM6 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM3 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM4 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM9 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM12 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM15 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM14 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM21 24h1v1h-1zM24 24h1v1h-1z"/></svg></div><span>Scan with your<br>iPhone camera</span></div>
+        <div class="soon-box when-soon">
+          <span class="pill big quiet">Coming soon to the App Store</span>
+          <p>Want a note when it’s out? <a href="mailto:hello@flickeep.com?subject=Tell%20me%20when%20flickeep%20is%20out">hello@flickeep.com</a></p>
+        </div>
+      </div>
+      <ul class="facts rv" style="--rv:.24s">
+        <li>Free to try</li>
+        <li>No ads</li>
+        <li>No account</li>
+        <li>Your photos stay on your iPhone</li>
+      </ul>
+    </div>
+
+    <div class="deck" data-deck>
+      <div class="deck-field" aria-hidden="true"><i></i><i></i></div>
+      <p class="kicker deck-kicker">Shuffled memories</p>
+      <div class="stack" tabindex="0" aria-label="Sample prints to try. Right arrow keeps, left arrow lets go, Enter turns a print over." aria-describedby="deck-help"></div>
+      <noscript><img src="/img/screens/home.webp" alt="flickeep's home screen: three prints of shuffled memories" style="width:260px;border-radius:30px"></noscript>
+      <div class="deck-under">
+        <div class="deck-tools" role="group" aria-label="Try it">
+          <button type="button" data-act="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg>Let go</button>
+          <span class="sep" aria-hidden="true"></span>
+          <button type="button" data-act="turn">Turn over</button>
+          <span class="sep" aria-hidden="true"></span>
+          <button type="button" data-act="keep">Keep<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        </div>
+        <span class="verdict keep" aria-hidden="true">Keep</span>
+        <span class="verdict go" aria-hidden="true">Let go</span>
+      </div>
+      <p class="deck-tally" id="deck-help">Try it: drag a print, or tap it</p>
+      <p class="sr" aria-live="polite" data-live></p>
+    </div>
+  </div>
+</section>
+
+<!-- ————— How it works ————— -->
+<section class="section" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker rv">How it works</p>
+      <h2 id="how-title" class="display rv">One at a time.<br><i>Keep what matters.</i></h2>
+      <p class="lede rv">No grids to scroll through, no folders to plan. flickeep shuffles your library and hands you one photo at a time, like a stack of prints on the table.</p>
+    </div>
+    <div class="story">
+      <ol class="steps">
+        <li class="step">
+          <figure class="phone"><div class="screen"><img src="/img/screens/home.webp" alt="flickeep's home screen: shuffled memories as three prints, with months below" loading="lazy" width="860" height="1868"></div></figure>
+          <span class="step-n">01</span>
+          <h3>Take a look.</h3>
+          <p>Open flickeep and your memories are there, shuffled. Or pick a month, your screenshots, or an album.</p>
+        </li>
+        <li class="step">
+          <figure class="phone"><div class="screen"><img src="/img/screens/keep.webp" alt="A print being swiped right, with the word Keep" loading="lazy" width="860" height="1868"></div></figure>
+          <span class="step-n">02</span>
+          <h3>Swipe right <i>to keep.</i></h3>
+          <p>The prints you love stay right where they are. It’s as quick as it feels.</p>
+        </li>
+        <li class="step">
+          <figure class="phone"><div class="screen"><img src="/img/screens/letgo.webp" alt="A print coming apart into dots as it's swiped left, with the words Let go" loading="lazy" width="860" height="1868"></div></figure>
+          <span class="step-n">03</span>
+          <h3>Swipe left <i>to let go.</i></h3>
+          <p>It comes apart into dots and waits in Trash. Nothing is deleted yet.</p>
+        </li>
+        <li class="step">
+          <figure class="phone"><div class="screen"><img src="/img/screens/back.webp" alt="The back of a print: Dec 21, 2025, 3:06 PM, Zürich, Switzerland, a Sunday afternoon, written by hand" loading="lazy" width="860" height="1868"></div></figure>
+          <span class="step-n">04</span>
+          <h3>Tap to <i>turn it over.</i></h3>
+          <p>On the back: the day, the time of day and the place, written by hand. Share it from there, as a print.</p>
+        </li>
+      </ol>
+      <div class="story-phone" aria-hidden="true">
+        <figure class="phone"><div class="screen">
+          <img src="/img/screens/home.webp" alt="" loading="lazy" width="860" height="1868">
+          <img src="/img/screens/keep.webp" alt="" loading="lazy" width="860" height="1868">
+          <img src="/img/screens/letgo.webp" alt="" loading="lazy" width="860" height="1868">
+          <img src="/img/screens/back.webp" alt="" loading="lazy" width="860" height="1868">
+        </div></figure>
+      </div>
+      <div class="pager" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ————— Nothing by accident ————— -->
+<section class="section" id="safe" aria-labelledby="safe-title">
+  <div class="wrap">
+    <div class="safe-grid">
+      <div>
+        <p class="kicker rv">Nothing by accident</p>
+        <h2 id="safe-title" class="display rv">Nothing leaves<br><i>until you say so. Twice.</i></h2>
+        <p class="lede rv" style="margin-top:26px">Letting go isn’t deleting. Everything you swipe left waits in flickeep’s Trash, where you can look it over and put anything back.</p>
+        <ul class="chips rv">
+          <li>Favorites are protected</li>
+          <li>Undo, always</li>
+          <li>Works with iCloud Photos</li>
+          <li>Only the photos you allow</li>
+        </ul>
+      </div>
+      <figure class="rv">
+        <div class="shot"><img src="/img/screens/trash.webp" alt="flickeep's Trash: five items waiting, each with a Put back button" loading="lazy" width="860" height="1479"></div>
+        <figcaption class="shot-cap">Trash, in flickeep</figcaption>
+      </figure>
+    </div>
+    <ol class="flow">
+      <li class="rv"><b>01</b><h3>Swipe left</h3><p>It waits in Trash. Nothing is deleted.</p></li>
+      <li class="rv" style="--rv:.08s"><b>02</b><h3>Look it over</h3><p>Put back anything you want to keep, whenever you like.</p></li>
+      <li class="rv" style="--rv:.16s"><b>03</b><h3>Confirm</h3><p>Delete when you’re ready, and your iPhone asks once more.</p></li>
+      <li class="rv" style="--rv:.24s"><b>04</b><h3>Change your mind</h3><p>Deleted photos stay in Recently Deleted for about 30 days.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ————— Look back ————— -->
+<section class="section" id="look" aria-labelledby="look-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker rv">Look back</p>
+      <h2 id="look-title" class="display rv">By month,<br><i>by place.</i></h2>
+    </div>
+    <div class="bento">
+      <article class="tile tile-cal rv">
+        <h3>A calendar and a map <i>of where you’ve been.</i></h3>
+        <p>A print on every day you took a photo, and a map of where you were. Tap a day to see it again.</p>
+        <figure class="phone"><div class="screen"><img src="/img/screens/calendar.webp" alt="flickeep's Calendar: January on a map of Europe, with 11 photos over 4 days in 3 places" loading="lazy" width="860" height="1868"></div></figure>
+      </article>
+      <article class="tile tile-share rv" style="--rv:.08s">
+        <h3>Share it <i>as a print.</i></h3>
+        <p>Send a photo as a print, front and back, with the place written by hand. Coordinates stay with you.</p>
+        <div class="tile-art">
+          <div class="share-art" aria-hidden="true">
+            <div class="p"><img src="/img/p/coast.webp" alt="" loading="lazy"></div>
+            <span class="place">Hvar, Croatia</span>
+            <span class="date">Jan 9, 2026</span>
+            <span class="sig"><svg><use href="#mark"/></svg>FLICKEEP</span>
+          </div>
+        </div>
+      </article>
+      <article class="tile tile-feed rv" style="--rv:.16s">
+        <h3>Videos, <i>like a feed.</i></h3>
+        <p>Up and down, full screen, with the sound on. A Trash button when one can go.</p>
+        <div class="tile-art">
+          <div class="feed-art" aria-hidden="true">
+            <div class="v" style="background-image:url(/img/p/balloons.webp)"></div>
+            <div class="head"><b>Dec 20, 2025</b><small>Shuffled memories</small></div>
+            <div class="icons">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11M8 7l4-4 4 4M7 11H5.5v9.5h13V11H17"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8M6.5 7h11"/><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M9.5 15h5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.5h15M9.5 6.5V4.5h5v2M6.5 6.5l1 13h9l1-13M10.5 10v6.5M13.5 10v6.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"><path d="M9 14 4.5 9.5 9 5"/><path d="M4.5 9.5h9a5.5 5.5 0 0 1 0 11H11"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4Z"/><path d="M15.5 9.5a3.5 3.5 0 0 1 0 5M17.8 7a7 7 0 0 1 0 10"/></svg>
+            </div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ————— Private ————— -->
+<section class="section private" id="privacy" aria-labelledby="privacy-title">
+  <div class="wrap">
+    <div class="private-grid">
+      <div class="section-head">
+        <p class="kicker rv">Private by design</p>
+        <h2 id="privacy-title" class="display rv">Your photos<br><i>never leave your iPhone.</i></h2>
+        <p class="lede rv">flickeep reads your library on your iPhone and nowhere else. There’s no flickeep server to send it to.</p>
+      </div>
+      <div class="label rv" style="--rv:.1s">
+        <p class="kicker">In plain words</p>
+        <div class="label-row">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5 9 10.5v11.2c0 9.6 6.3 17.6 15 20.3 8.7-2.7 15-10.7 15-20.3V10.5L24 5Z"/><path d="m17.5 24 4.6 4.6 8.8-9.2"/></svg>
+          <b>Data not collected.</b>
+        </div>
+        <p>flickeep doesn’t collect anything from the app: not your photos, not what you keep, not how you use it.</p>
+      </div>
+    </div>
+    <ul class="promises">
+      <li class="rv"><b>No uploads</b><span>Your photos, videos and progress stay on your iPhone.</span></li>
+      <li class="rv" style="--rv:.06s"><b>No account</b><span>Nothing to sign up for. Open it and take a look.</span></li>
+      <li class="rv" style="--rv:.12s"><b>No ads</b><span>Not in the free version, not in Pro. No ads, ever.</span></li>
+      <li class="rv" style="--rv:.18s"><b>No tracking</b><span>No analytics in the app. None on this website, either.</span></li>
+    </ul>
+    <p class="more rv">Every detail is in the <a href="/privacy">privacy policy</a>.</p>
+  </div>
+</section>
+
+<!-- ————— Pricing ————— -->
+<section class="section" id="pricing" aria-labelledby="pricing-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker rv">Pricing</p>
+      <h2 id="pricing-title" class="display rv">Try it free.<br><i>Keep going with Pro.</i></h2>
+    </div>
+    <div class="plans">
+      <article class="plan rv">
+        <p class="kicker">Free to try</p>
+        <h3>See how it feels, <i>on your own photos.</i></h3>
+        <ul class="plan-list">
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Sort 20 photos and watch 10 videos</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Looking back, albums and the calendar stay free</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Sharing as a print stays free</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Trash, put back and delete stay free</span></li>
+        </ul>
+        <div class="price-free"><b>$0</b><span>No ads, no account</span></div>
+      </article>
+      <article class="plan pro rv" style="--rv:.08s">
+        <p class="kicker">flickeep Pro</p>
+        <h3>Keep going. <i>As much as you like.</i></h3>
+        <ul class="plan-list">
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Unlimited photos and videos</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>No ads, ever</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Your photos never leave your iPhone</span></li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span>Cancel anytime</span></li>
+        </ul>
+        <div class="options">
+          <div class="opt best"><b>Yearly <span class="tag">Save 71%</span></b><small>3 days free for new subscribers</small><span class="amt">$29.99<small>$0.58 a week</small></span></div>
+          <div class="opt"><b>Lifetime</b><small>Pay once, keep it for good</small><span class="amt">$59.99</span></div>
+          <div class="opt"><b>Weekly</b><small>Billed every week</small><span class="amt">$1.99</span></div>
+        </div>
+        <p class="fine">Prices in US dollars; the App Store shows yours in your currency. Subscriptions renew until you cancel in your iPhone’s Settings.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ————— Questions ————— -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <div>
+      <p class="kicker rv">Questions</p>
+      <h2 id="faq-title" class="display rv" style="margin-top:22px">Good to<br><i>know.</i></h2>
+      <p class="lede rv" style="margin-top:26px">Something else? Write to <a href="mailto:hello@flickeep.com" style="color:var(--paper);text-underline-offset:3px">hello@flickeep.com</a>. A person reads every message.</p>
+    </div>
+    <div class="faq-list rv">
+      <details>
+        <summary>Does swiping left delete my photo?</summary>
+        <div class="a"><p>No. It waits in flickeep’s Trash. You look it over and confirm, and then your iPhone asks once more. Deleted photos stay in Photos › Recently Deleted for about 30 days. Favorites can’t be sent to Trash.</p></div>
+      </details>
+      <details>
+        <summary>Does flickeep upload my photos?</summary>
+        <div class="a"><p>Never. flickeep has no server and no account. Your library is read on your iPhone through Apple Photos. When you turn a print over, Apple’s map service is asked for the name of the place, using only the location, never the photo.</p></div>
+      </details>
+      <details>
+        <summary>Does it work with iCloud Photos?</summary>
+        <div class="a"><p>Yes. You choose whether flickeep may download photos from iCloud: on this iPhone only, over Wi-Fi, or over Wi-Fi and cellular. Deleting a photo, once you confirm, syncs to your other devices like it does in Photos.</p></div>
+      </details>
+      <details>
+        <summary>What’s free, and what’s Pro?</summary>
+        <div class="a"><p>flickeep is free to try: sort 20 photos and watch 10 videos. Looking back, albums, the calendar, sharing, Trash and deleting stay free. flickeep Pro removes the limit, and has no ads either.</p></div>
+      </details>
+      <details>
+        <summary>Will it free up space?</summary>
+        <div class="a"><p>Deleting photos can free space. Trash shows the size of the original files; the space your iPhone gets back can be different, especially with iCloud Photos.</p></div>
+      </details>
+      <details>
+        <summary>How do I cancel or restore Pro?</summary>
+        <div class="a"><p>Cancel in your iPhone’s Settings › your name › Subscriptions. Deleting the app doesn’t cancel a subscription. On a new iPhone, open Settings in flickeep and tap Restore purchases.</p></div>
+      </details>
+      <details>
+        <summary>Which iPhones does it run on?</summary>
+        <div class="a"><p>Any iPhone with iOS 18 or later.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ————— The end ————— -->
+<section class="section final" aria-labelledby="final-title">
+  <div class="sheet" aria-hidden="true">
+    <div class="sheet-row"><figure style="--r:-1.1deg;--y:-10px"><img src="/img/p/facade.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-0.7deg;--y:-13px"><img src="/img/p/tokyorain.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-2.7deg;--y:3px"><img src="/img/p/lighthouse.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-2.6deg;--y:4px"><img src="/img/p/balloons.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-2.8deg;--y:2px"><img src="/img/p/cafe.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.8deg;--y:-12px"><img src="/img/p/sailboat.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-0.4deg;--y:-12px"><img src="/img/p/pasta.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.7deg;--y:3px"><img src="/img/p/mountainlake.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-0.5deg;--y:12px"><img src="/img/p/trainwindow.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.4deg;--y:-7px"><img src="/img/p/flowers.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.8deg;--y:4px"><img src="/img/p/birthdaycake.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:2.9deg;--y:4px"><img src="/img/p/snowforest.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.5deg;--y:-13px"><img src="/img/p/fireworks.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:3.0deg;--y:-13px"><img src="/img/p/dogbeach.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.4deg;--y:-10px"><img src="/img/p/breakfast.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.3deg;--y:-10px"><img src="/img/p/autumnpath.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.1deg;--y:-10px"><img src="/img/p/facade.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-0.7deg;--y:-13px"><img src="/img/p/tokyorain.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-2.7deg;--y:3px"><img src="/img/p/lighthouse.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-2.6deg;--y:4px"><img src="/img/p/balloons.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-2.8deg;--y:2px"><img src="/img/p/cafe.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.8deg;--y:-12px"><img src="/img/p/sailboat.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-0.4deg;--y:-12px"><img src="/img/p/pasta.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.7deg;--y:3px"><img src="/img/p/mountainlake.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-0.5deg;--y:12px"><img src="/img/p/trainwindow.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.4deg;--y:-7px"><img src="/img/p/flowers.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.8deg;--y:4px"><img src="/img/p/birthdaycake.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:2.9deg;--y:4px"><img src="/img/p/snowforest.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.5deg;--y:-13px"><img src="/img/p/fireworks.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:3.0deg;--y:-13px"><img src="/img/p/dogbeach.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:0.4deg;--y:-10px"><img src="/img/p/breakfast.webp" alt="" loading="lazy" decoding="async"></figure><figure style="--r:-1.3deg;--y:-10px"><img src="/img/p/autumnpath.webp" alt="" loading="lazy" decoding="async"></figure></div>
+  </div>
+  <div class="wrap">
+    <h2 id="final-title" class="display rv">Your photos are waiting.<i>Take a look.</i></h2>
+    <p class="lede rv">Free to try on iPhone. A few minutes a day, one print at a time.</p>
+    <div class="cta rv">
+      <a class="badge when-live" data-ct="final" href="/get"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" width="168" height="56" alt="Download on the App Store" loading="lazy"></a>
+      <div class="qr when-live"><div class="qr-code"><svg role="img" aria-label="QR code for flickeep.com/get" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges"><path fill="currentColor" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM14 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM9 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM1 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM21 10h1v1h-1zM24 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM14 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM2 12h1v1h-1zM6 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM3 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM4 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM9 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM12 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM15 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM20 22h1v1h-1zM21 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM14 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM21 24h1v1h-1zM24 24h1v1h-1z"/></svg></div><span>Scan with your<br>iPhone camera</span></div>
+      <div class="soon-box when-soon">
+        <span class="pill big quiet">Coming soon to the App Store</span>
+        <p>Want a note when it’s out? <a href="mailto:hello@flickeep.com?subject=Tell%20me%20when%20flickeep%20is%20out">hello@flickeep.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer><a href="support">Support</a><a href="privacy">Privacy</a></footer>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="brand" href="/" aria-label="flickeep, home"><svg aria-hidden="true"><use href="#mark"/></svg><b>flickeep</b></a>
+      <p>A calm way to look back at your photos.</p>
+    </div>
+    <nav class="foot-links" aria-label="More">
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+      <a href="mailto:hello@flickeep.com">hello@flickeep.com</a>
+    </nav>
+    <p class="legal">© 2026 flickeep. Sample photos from Unsplash. This website sets no cookies and runs no analytics.<br>Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
+  </div>
+</footer>
+
+<div class="bar" aria-hidden="true">
+  <img src="/img/icon.webp" alt="" width="44" height="44" loading="lazy">
+  <div><b>flickeep</b><small>Free to try · App Store</small></div>
+  <a class="pill" data-ct="bar" href="/get" tabindex="-1">Get</a>
+</div>
 </body>
 </html>
