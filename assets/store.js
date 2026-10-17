@@ -8,7 +8,7 @@ window.FLICKEEP = { id: "6816350944", pt: "" };
 (function (d, s) {
   d.documentElement.classList.add("js", s.id ? "live" : "soon");
   // Safari on iPhone shows its own “Open in the App Store” banner.
-  if (s.id) d.write('<meta name="apple-itunes-app" content="app-id=' + s.id + '">');
+  if (s.id && !d.querySelector('meta[name="apple-itunes-app"]')) d.write('<meta name="apple-itunes-app" content="app-id=' + s.id + '">');
   // If the page script never runs, show everything anyway.
   setTimeout(function () { if (!window.flickeepReady) d.documentElement.classList.remove("js"); }, 3000);
 })(document, window.FLICKEEP);
