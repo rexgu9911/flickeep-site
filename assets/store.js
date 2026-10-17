@@ -3,7 +3,7 @@
    pt: optional provider token (App Store Connect › App Analytics › Campaigns). With it,
        each button gets its own campaign link, so downloads per button show up in
        App Analytics; the site itself runs no analytics. */
-window.FLICKEEP = { id: "", pt: "" };
+window.FLICKEEP = { id: "6816350944", pt: "" };
 
 (function (d, s) {
   d.documentElement.classList.add("js", s.id ? "live" : "soon");
